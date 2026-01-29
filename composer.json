@@ -1,12 +1,12 @@
 {
-  "name": "pimcore/perspective-editor",
-  "license": "GPL-3.0+",
+  "name": "six-it/perspective-editor",
+  "license": "GPL-3.0-or-later",
   "type": "pimcore-bundle",
-  "description": "Pimcore Perspective Editor",
+  "description": "6IT Pimcore Perspective Editor",
   "config": {
     "sort-packages": true,
     "preferred-install": {
-      "pimcore/pimcore": "source",
+      "six-it/pimcore-source": "source",
       "*": "dist"
     }
   },
@@ -14,15 +14,15 @@
   "minimum-stability": "dev",
   "require": {
     "pimcore/compatibility-bridge-v10": "^1.0",
-    "pimcore/admin-ui-classic-bundle": "^1.0",
-    "pimcore/pimcore": "^11.2",
+    "six-it/admin-ui-classic-bundle": "^1.0",
+    "six-it/pimcore-source": "^1.0",
     "symfony/http-foundation": "^6.3"
   },
   "require-dev": {
     "phpstan/phpstan": "^1.2",
     "phpunit/phpunit": "^9.3",
     "codeception/codeception": "^4.1.12 || ^5.0.3",
-    "codeception/module-symfony":"^1.6.0 || ^3.1.0",
+    "codeception/module-symfony": "^1.6.0 || ^3.1.0",
     "codeception/phpunit-wrapper": "^9",
     "codeception/module-asserts": "^2"
   },
