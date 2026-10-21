@@ -15,7 +15,7 @@
   "require": {
     "php": "~8.4.0",
     "six-it/admin-ui-classic-bundle": "^2.1",
-    "six-it/pimcore-source": "^2.0",
+    "six-it/pimcore-source": "^2.1",
     "symfony/config": "^7.4",
     "symfony/dependency-injection": "^7.4",
     "symfony/http-foundation": "^7.4",
