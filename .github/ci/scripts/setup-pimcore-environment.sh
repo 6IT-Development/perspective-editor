@@ -15,10 +15,5 @@ chmod 755 bin/console
 cp -r .github/ci/files/kernel/. kernel
 cp -r .github/ci/files/public/. public
 
-if [ ${REQUIRE_ADMIN_BUNDLE} = true ]; then
-    composer require -n --no-update pimcore/admin-ui-classic-bundle:^1.0
-else
-    ## Todo Remove when dropping support for Pimcore 10
-    rm config/packages/security.yaml
-    cp .github/ci/files/security.yaml config/packages
-fi
+# six-it/admin-ui-classic-bundle is a hard requirement in composer.json (Symfony 7.4 / PHP 8.4),
+# so neither pimcore/admin-ui-classic-bundle nor the Pimcore 10 security.yaml fallback are needed anymore.

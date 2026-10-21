@@ -25,7 +25,7 @@ use Pimcore\Bundle\PerspectiveEditorBundle\Services\ViewAccessor;
 use Pimcore\Controller\UserAwareController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
@@ -42,12 +42,8 @@ class PerspectiveController extends UserAwareController
     {
     }
 
-    /**
-     * @Route("/perspective/get-tree", name="get-perspective-tree")
-     *
-     * @return JsonResponse
-     */
-    public function getPerspectiveTreeAction(PerspectiveAccessor $perspectiveAccessor, TreeHelper $treeHelper)
+    #[Route('/perspective/get-tree', name: 'get-perspective-tree')]
+    public function getPerspectiveTreeAction(PerspectiveAccessor $perspectiveAccessor, TreeHelper $treeHelper): JsonResponse
     {
         $this->checkPermission(PimcorePerspectiveEditorBundle::PERMISSION_PERSPECTIVE_EDITOR);
 
@@ -63,12 +59,8 @@ class PerspectiveController extends UserAwareController
         return new JsonResponse($tree);
     }
 
-    /**
-     * @Route("/view/get-tree", name="get-view-tree")
-     *
-     * @return JsonResponse
-     */
-    public function getViewTreeAction(ViewAccessor $viewAccessor, TreeHelper $treeHelper)
+    #[Route('/view/get-tree', name: 'get-view-tree')]
+    public function getViewTreeAction(ViewAccessor $viewAccessor, TreeHelper $treeHelper): JsonResponse
     {
         $this->checkPermission(PimcorePerspectiveEditorBundle::PERMISSION_PERSPECTIVE_EDITOR);
 
@@ -85,12 +77,8 @@ class PerspectiveController extends UserAwareController
         return new JsonResponse($tree);
     }
 
-    /**
-     * @Route("/perspective/update", name="update-perspective")
-     *
-     * @return JsonResponse
-     */
-    public function updatePerspectivesAction(PerspectiveAccessor $perspectiveAccessor, Request $request, CsrfProtectionHandler $csrfProtectionHandler)
+    #[Route('/perspective/update', name: 'update-perspective')]
+    public function updatePerspectivesAction(PerspectiveAccessor $perspectiveAccessor, Request $request, CsrfProtectionHandler $csrfProtectionHandler): JsonResponse
     {
         $csrfProtectionHandler->checkCsrfToken($request);
         $this->checkPermission(PimcorePerspectiveEditorBundle::PERMISSION_PERSPECTIVE_EDITOR);
@@ -113,12 +101,8 @@ class PerspectiveController extends UserAwareController
         return new JsonResponse($ret);
     }
 
-    /**
-     * @Route("/view/update", name="update-view")
-     *
-     * @return JsonResponse
-     */
-    public function updateViewAction(ViewAccessor $viewAccessor, Request $request, CsrfProtectionHandler $csrfProtectionHandler)
+    #[Route('/view/update', name: 'update-view')]
+    public function updateViewAction(ViewAccessor $viewAccessor, Request $request, CsrfProtectionHandler $csrfProtectionHandler): JsonResponse
     {
         $csrfProtectionHandler->checkCsrfToken($request);
         $this->checkPermission(PimcorePerspectiveEditorBundle::PERMISSION_PERSPECTIVE_EDITOR);

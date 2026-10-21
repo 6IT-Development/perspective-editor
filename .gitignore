@@ -41,3 +41,5 @@ nbproject
 /.htaccess
 /auth.json
 /config.json
+/tests/_output
+/tests/_support/_generated

@@ -67,7 +67,7 @@ class ViewAccessor extends AbstractAccessor
 
     public function getConfiguration(): array
     {
-        $views = \Pimcore\CustomView\Config::get();
+        $views = \Pimcore\Bundle\AdminBundle\CustomView\Config::get();
 
         if ($views) {
             foreach ($views as $key => $view) {
@@ -108,6 +108,6 @@ class ViewAccessor extends AbstractAccessor
         $configuration = $this->convertTreeStoreToConfiguration($treeStore);
         $this->verifySql($configuration);
         $this->validateConfig('custom_views', $configuration);
-        \Pimcore\CustomView\Config::save($configuration, $deletedRecords);
+        \Pimcore\Bundle\AdminBundle\CustomView\Config::save($configuration, $deletedRecords);
     }
 }

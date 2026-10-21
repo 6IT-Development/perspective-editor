@@ -97,9 +97,7 @@ class ViewAccessorTest extends Unit
     private static function getMethod($class, $name)
     {
         $class = new \ReflectionClass($class);
-        $method = $class->getMethod($name);
-        $method->setAccessible(true);
-
-        return $method;
+        // ReflectionMethod::setAccessible() is a no-op since PHP 8.1 (deprecated in PHP 8.5)
+        return $class->getMethod($name);
     }
 }

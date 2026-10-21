@@ -1,9 +1,15 @@
 # Installation
+## Requirements
+
+- PHP `~8.4.0`
+- Symfony `^7.4`
+- `six-it/pimcore-source` `^2.0` and `six-it/admin-ui-classic-bundle` `^2.0`
+
 ## Bundle Installation
 
 1. Install the required dependencies:
 ```bash
-composer require pimcore/perspective-editor
+composer require six-it/perspective-editor
 ```
 
 2. Make sure the bundle is enabled in the `config/bundles.php` file. The following lines should be added:
