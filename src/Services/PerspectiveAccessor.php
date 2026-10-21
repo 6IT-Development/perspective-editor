@@ -99,7 +99,7 @@ class PerspectiveAccessor extends AbstractAccessor
 
     public function getConfiguration(): array
     {
-        $config = \Pimcore\Perspective\Config::get();
+        $config = \Pimcore\Bundle\AdminBundle\Perspective\Config::get();
         if (is_array($config)) {
             return $config;
         } else {
@@ -118,6 +118,6 @@ class PerspectiveAccessor extends AbstractAccessor
     {
         $configuration = $this->convertTreeStoreToConfiguration($treeStore);
         $this->validateConfig('perspectives', $configuration);
-        \Pimcore\Perspective\Config::save($configuration, $deletedRecords);
+        \Pimcore\Bundle\AdminBundle\Perspective\Config::save($configuration, $deletedRecords);
     }
 }

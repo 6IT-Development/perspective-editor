@@ -56,9 +56,9 @@ class PimcorePerspectiveEditorBundle extends AbstractPimcoreBundle implements Pi
         ];
     }
 
-    protected function getComposerPackageName(): string
+    public function getComposerPackageName(): string
     {
-        return 'pimcore/perspective-editor';
+        return 'six-it/perspective-editor';
     }
 
     public function getInstaller(): InstallerInterface
